@@ -1,38 +1,364 @@
+:root {
+  --dark-mode-color: #0f0f0f;
+  --shapeless-button-highlight-color: #353535;
+  --border-color-dark: #424242;
+  --gray-buttons: #222222;
+  --light-gray-buttons: #242424;
+  --highlight-button-dark: #353535;
+  --highlight-button-light: #3d3d3d;
+  --global-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--dark-mode-color);
+}
 .App {
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  background-color: var(--dark-mode-color);
+}
+.start {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  align-items: center;
+  height: 100%;
+  margin-right: 10px;
+}
+.start > img {
+  height: 60%;
+}
+#hamburger {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--dark-mode-color);
+  border-color: transparent;
+  margin-right: 15px;
+  margin-left: 10px;
+  padding: 0px;
+}
+button {
+  cursor: pointer;
+}
+#youtubeButton {
+  height: 60%;
+  width: 120px;
+  background-color: var(--dark-mode-color);
+  border: none;
+}
+#hamburger:hover {
+  background-color: var(--shapeless-button-highlight-color);
+}
+.center {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  width: 60vw;
+  min-width: 60px;
+  height: 100%;
+}
+.inputContainer {
+  width: 100%;
+}
+#searchForm {
+  display: flex;
+  flex-grow: 4;
+  height: 100%;
+  vertical-align: middle;
+}
+.input {
+  padding: 10px;
+  color: white;
+  font-size: 100%;
+  border-radius: 20px 0px 0px 20px;
+  width: 80%;
+  min-width: 50px;
+  background-color: var(--dark-mode-color);
+  border: solid;
+  border-width: 1px;
+  border-color: var(--border-color-dark);
+  z-index: 1;
+}
+.input:focus {
+  outline: none;
+  border: 1px solid rgb(70, 118, 190);
+}
+#searchButton {
+  width: 60px;
+  border-radius: 0px 20px 20px 0px;
+  background-color: var(--gray-buttons);
+  border: solid;
+  margin-right: 20px;
+  border-width: 1px 1px 1px 0px;
+  border-color: var(--border-color-dark);
+}
+#micButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--gray-buttons);
+  border: none;
+}
+#micButton:hover {
+  background-color: var(--highlight-button-dark);
+}
+.end {
+  width: 150px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.endButtons {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--dark-mode-color);
+  border: none;
+}
+.endButtons:hover {
+  background-color: var(--shapeless-button-highlight-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* SIDEBAR */
+.sidebar {
+  color: white;
+  background-color: var(--dark-mode-color);
+  flex: 0 0 240px;
+  padding: 12px;
+  position: sticky;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
+  scrollbar-width: thin;
+}
+.sidebarGroups {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-width: 1px;
+  border-color: var(--border-color-dark);
+  border-width: 0px 0px 1px 0px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.sidebarButtons {
+  background-color: var(--dark-mode-color);
+  border: none;
+  border-radius: 10px;
+  padding: 0px;
+}
+.sidebarButtons:hover {
+  background-color: var(--highlight-button-dark);
+}
+.sidebarButtonsSelected {
+  background-color: var(--light-gray-buttons);
+  border: none;
+  border-radius: 10px;
+  padding: 0px;
+}
+.sidebarButtonsSelected:hover {
+  background-color: var(--highlight-button-light);
+}
+.rowContainers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: 40px;
+}
+.sidebarIcons {
+  margin-right: 30px;
+}
+.sidebarColorIcons {
+  height: 24px;
+  width: 24px;
+}
+.sidebarText {
+  font-family: var(--global-font);
+  font-size: 15px;
+  color: white;
+}
+.sidebarTextSelected {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+.sidebarLabels {
+  font-family: var(--global-font);
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-top: 10px;
+  height: 35px;
+}
+.info {
+  padding: 16px 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.info > a {
+  color: gray;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.copyright {
+  font-size: 12px;
+  color: gray;
+  font-weight: 600;
+  padding: 16px 12px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* BODY */
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  /* overflow-y: scroll; */
+  top: 0;
+  bottom: 0;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.sidebarBody {
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+  scrollbar-color: gray black;
+}
+.contentContainer {
+  width: auto;
+  max-width: 1284px;
+  border: solid;
+  min-height: auto;
+  border-width: 0px 0px 1px 0px;
+  border-color: var(--border-color-dark);
+}
+.contentContainer:last-child {
+  border: none;
+  border-width: 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category {
+  font-family: var(--global-font);
+  font-weight: bold;
+  font-size: 20px;
+  height: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  line-height: 12px;
+}
+.closeButton {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: var(--dark-mode-color);
+  border: none;
+}
+.closeButton:hover {
+  background-color: var(--highlight-button-dark);
+}
+.closeIcon {
+  height: 24px;
+  width: 24px;
+  color: white;
+  margin-top: 3px;
+}
+.channelsContainer {
+  /* height: 494px; */
+  width: 100%;
+  margin-bottom: 16px;
+}
+.channels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: auto;
+  width: 100%;
+}
+.showMoreButton {
+  font-family: var(--global-font);
+  font-weight: bold;
+  color: white;
+  background-color: var(--dark-mode-color);
+  width: 102px;
+  height: 36px;
+  border-radius: 20px;
+  border: none;
+}
+.showMoreButton:hover {
+  background-color: var(--highlight-button-dark);
+}
+.singularChannel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 209px;
+  width: 209px;
+  height: 197px;
+  margin-bottom: 24px;
+}
+.channelIcon {
+  height: 103px;
+  width: 103px;
+  margin: 0px;
+  padding: 0px;
+}
+.channelName {
+  font-family: var(--global-font);
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.subCount {
+  font-family: var(--global-font);
+  font-size: 13.5px;
+  color: gray;
+  font-weight: 400;
+}
+.subscribeButton {
+  font-family: var(--global-font);
+  font-weight: 500;
+  color: white;
+  margin-top: 16px;
+  background-color: var(--gray-buttons);
+  border: none;
+  border-radius: 20px;
+  height: 32px;
+  width: 85px;
+  padding: 0px;
+}
+.subscribeButton:hover {
+  background: var(--highlight-button-light);
 }
