@@ -8,7 +8,7 @@ import { RxAvatar } from "react-icons/rx";
 import { useState } from "react";
 import Modal from "./Modal.js";
 import { IoIosNotifications } from "react-icons/io";
-import useOnClickOutside from "../useOnClickOutside.js";
+import useOnClickOutside from "../hooks/useOnClickOutside.js";
 import { useRef } from "react";
 
 function Header() {

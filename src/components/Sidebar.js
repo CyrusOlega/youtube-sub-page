@@ -54,6 +54,7 @@ function SideBarOpen() {
 function SideBarClose() {
   return <div id="sidebar-close"></div>;
 }
+
 function SidebarButton(props) {
   if (props.selected) {
     return (
