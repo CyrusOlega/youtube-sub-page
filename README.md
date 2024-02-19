@@ -7,3 +7,4 @@ Replicated webpage:
 Conditional Rendering:
 <br></br>
 ![image](https://github.com/CyrusOlega/youtube-sub-page/assets/111342428/bdd72524-c153-4a40-885b-3b56beb4576a)
+![image](https://github.com/CyrusOlega/youtube-sub-page/assets/111342428/b0cc7384-b374-43e4-a400-a95b3e495fb0)
