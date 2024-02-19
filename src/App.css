@@ -1,6 +1,7 @@
 :root {
   --dark-mode-color: #0f0f0f;
   --shapeless-button-highlight-color: #353535;
+  --shapeless-button-highlight-color-bright: #535353;
   --border-color-dark: #424242;
   --gray-buttons: #222222;
   --light-gray-buttons: #242424;
@@ -139,13 +140,16 @@ button {
 .sidebar {
   color: white;
   background-color: var(--dark-mode-color);
-  flex: 0 0 240px;
+  flex: 0 0 216px;
   padding: 12px;
   position: sticky;
-  overflow-y: scroll;
+  overflow-y: hidden;
   top: 0;
   bottom: 0;
   scrollbar-width: thin;
+}
+.sidebar:hover {
+  overflow-y: scroll;
 }
 .sidebarGroups {
   display: flex;
@@ -227,6 +231,16 @@ button {
   color: gray;
   font-weight: 600;
   padding: 16px 12px 0;
+}
+
+#sidebar-close {
+  color: white;
+  background-color: var(--dark-mode-color);
+  flex: 0 0 72px;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  bottom: 0;
 }
 
 /* BODY */
@@ -366,20 +380,25 @@ button {
 
 /* MODAL */
 
-#notification-modal {
-  background-color: #282828;
+#notification-modal-container {
   position: absolute;
   z-index: 9999;
   top: 48px;
   right: 75px;
+  background-color: #282828;
   border-radius: 12px;
+}
+
+#notification-modal {
+  width: 480px;
+  height: 642px;
 }
 
 #notification-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 12px 0px 20px;
   color: white;
   font-family: var(--global-font);
   font-size: 16px;
@@ -390,10 +409,6 @@ button {
   border-color: var(--border-color-dark);
 }
 
-#notification-modal-container {
-  width: 480px;
-  height: 642px;
-}
 #notification-modal-body {
   height: calc(100% - 48.8px);
   display: flex;
@@ -420,4 +435,21 @@ button {
 #no-notification-modal-sub-message {
   margin-bottom: 50px;
   font-size: 14px;
+}
+
+#notification-modal-gear-button {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 20px;
+}
+
+#notification-modal-gear-icon {
+  margin-right: 1px;
+  margin-top: 2px;
+}
+
+#notification-modal-gear-button:hover {
+  background-color: var(--shapeless-button-highlight-color-bright);
 }

@@ -10,6 +10,10 @@ import {
 } from "./SidebarData";
 
 function Sidebar() {
+  return <SideBarOpen />;
+}
+
+function SideBarOpen() {
   return (
     <div className="sidebar">
       <IconContext.Provider value={{ size: "25px", color: "white" }}>
@@ -47,6 +51,9 @@ function Sidebar() {
   );
 }
 
+function SideBarClose() {
+  return <div id="sidebar-close"></div>;
+}
 function SidebarButton(props) {
   if (props.selected) {
     return (

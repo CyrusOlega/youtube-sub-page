@@ -8,16 +8,20 @@ import { RxAvatar } from "react-icons/rx";
 import { useState } from "react";
 import Modal from "./Modal.js";
 import { IoIosNotifications } from "react-icons/io";
+import useOnClickOutside from "../useOnClickOutside.js";
+import { useRef } from "react";
 
 function Header() {
   const [modal, setModal] = useState(false);
   const toggleModal = () => {
     setModal(!modal);
   };
+  const ref = useRef();
+  useOnClickOutside(ref, toggleModal);
 
   return (
     <div className="container">
-      {modal && <Modal />}
+      {modal && <Modal ref={ref} />}
       <div className="start">
         <IconContext.Provider
           value={{
