@@ -394,3 +394,30 @@ button {
   width: 480px;
   height: 642px;
 }
+#notification-modal-body {
+  height: calc(100% - 48.8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#notification-modal-body span {
+  color: #aaaaaa;
+  width: 270px;
+  text-align: center;
+}
+
+#notification-icon {
+  margin-bottom: 22px;
+}
+
+#no-notification-modal-main-message {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+#no-notification-modal-sub-message {
+  margin-bottom: 50px;
+  font-size: 14px;
+}
