@@ -13,6 +13,7 @@ body {
   background-color: var(--dark-mode-color);
 }
 .App {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -361,4 +362,21 @@ button {
 }
 .subscribeButton:hover {
   background: var(--highlight-button-light);
+}
+
+/* MODAL */
+
+.modal {
+  color: white;
+  background-color: #282828;
+  position: absolute;
+  z-index: 9999;
+  top: 48px;
+  right: 75px;
+  border-radius: 20px;
+}
+
+.modal-container {
+  width: 480px;
+  height: 642px;
 }
