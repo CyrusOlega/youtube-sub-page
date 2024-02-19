@@ -366,17 +366,31 @@ button {
 
 /* MODAL */
 
-.modal {
-  color: white;
+#notification-modal {
   background-color: #282828;
   position: absolute;
   z-index: 9999;
   top: 48px;
   right: 75px;
-  border-radius: 20px;
+  border-radius: 12px;
 }
 
-.modal-container {
+#notification-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+  color: white;
+  font-family: var(--global-font);
+  font-size: 16px;
+  font-weight: 400;
+  border: solid;
+  height: 48.8px;
+  border-width: 0px 0px 1px 0px;
+  border-color: var(--border-color-dark);
+}
+
+#notification-modal-container {
   width: 480px;
   height: 642px;
 }
