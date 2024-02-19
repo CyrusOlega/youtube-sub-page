@@ -5,10 +5,19 @@ import { FaMicrophone } from "react-icons/fa6";
 import { GoDeviceCameraVideo } from "react-icons/go";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { RxAvatar } from "react-icons/rx";
+import { useState } from "react";
+import Modal from "./Modal.js";
+import { IoIosNotifications } from "react-icons/io";
 
 function Header() {
+  const [modal, setModal] = useState(false);
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
   return (
     <div className="container">
+      {modal && <Modal />}
       <div className="start">
         <IconContext.Provider
           value={{
@@ -58,8 +67,8 @@ function Header() {
           <button className="endButtons">
             <GoDeviceCameraVideo />
           </button>
-          <button className="endButtons">
-            <IoIosNotificationsOutline />
+          <button onClick={toggleModal} className="endButtons">
+            {!modal ? <IoIosNotificationsOutline /> : <IoIosNotifications />}
           </button>
           <button className="endButtons">
             <RxAvatar />
